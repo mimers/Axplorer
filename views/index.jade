@@ -2,5 +2,7 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  ol devices
+  ul
+    each val in device_list
+      li
+        a(href=val+'/')=val
