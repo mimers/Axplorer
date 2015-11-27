@@ -1,8 +1,23 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.type {
+    width: 24px;
+    height: 24px;
+    background-size: 24px;
+    background-repeat: no-repeat;
+}
+
+.filetype_0 {
+    background-image: url('/images/file.png');
+}
+
+.filetype_1 {
+    background-image: url('/images/folder.png');
 }
 
 a {
-  color: #00B7FF;
+    color: #00B7FF;
 }

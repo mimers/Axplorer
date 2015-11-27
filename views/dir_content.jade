@@ -4,16 +4,18 @@ block content
   a(href=upper) up directory
   table
     tr
-      td mod
+      td type
       td user
       td group
+      td date
       td size
       td name
     each entry in files
       tr
-        td #{entry.type}
+        td(class="type filetype_#{entry.type}")
         td #{entry.owner}
         td #{entry.group}
+        td #{entry.time.to}
         td
           span=entry.size
         td

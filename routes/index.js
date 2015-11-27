@@ -49,6 +49,7 @@ router.use(function(req, res, next) {
                     if (entry.size > 0) {
                         entry.size = humanize.filesize(entry.size);
                     };
+                    entry.time = new Date(entry.time);
                 })
                 if (path.charAt(path.length - 1) == '/') {
                     path = path.substr(0, path.length - 1);
@@ -56,7 +57,8 @@ router.use(function(req, res, next) {
                 path = path.substr(0, path.lastIndexOf('/') + 1);
                 res.render('dir_content', {
                     files: entries,
-                    upper: '/' + path
+                    upper: '/' + path,
+                    type_class: 'filetype_0'
                 });
             });
         });
