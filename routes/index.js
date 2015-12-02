@@ -39,7 +39,10 @@ router.use(function(req, res, next) {
             device = path.substr(0, device_index);
             android_path = path.substr(device_index);
         }
-        exec("adb -s " + device + " shell ls -l /" + android_path, function(error, stdout, stderr) {
+        android_path = "\""+decodeURI(android_path).replace(' ', '\\ ')+"\"";
+        var cmd = "adb -s " + device + " shell ls -l /" + android_path;
+        console.log("executing "+cmd);
+        exec(cmd, function(error, stdout, stderr) {
             Parser.parseEntries(stdout, function(err, entries) {
                 console.log('got entries: ' + entries.length);
                 entries.forEach(function (entry) {

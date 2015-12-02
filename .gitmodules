@@ -1,0 +1,3 @@
+[submodule "node_modules/parse-listing"]
+	path = node_modules/parse-listing
+	url = git@github.com:mimers/parse-listing.git
